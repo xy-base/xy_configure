@@ -1,2 +1,2 @@
 include xy_configure
-recursive-include xy_conda/* *
+recursive-include xy_configure/* *
