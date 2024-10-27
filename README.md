@@ -25,14 +25,14 @@
 ## 安装
 
 ```bash
+# bash
 pip install xy_configure
 ```
 
 ## 使用
 
-###### python脚本
-
 ```python
+# Python Interpreter.
 from xy_configure.Configure import Configure
 from xy_configure.Pair.Section import Section
 configure = Configure() 

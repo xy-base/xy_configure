@@ -1,9 +1,9 @@
 # -*- coding: UTF-8 -*-
-__author__ = "yuyangit"
+__author__ = "余洋"
 """
   * @File    :   Configure.py
   * @Time    :   2023/04/22 18:33:40
-  * @Author  :   余洋 
+  * @Author  :   余洋
   * @Version :   1.0
   * @Contact :   yuyangit.0515@qq.com
   * @License :   (C)Copyright 2019-2024, Ship of Ocean
@@ -207,7 +207,9 @@ class Configure(dict):
             raise FileNotFoundError(f"配置文件({config_file_path})不存在!")
 
         if not os.access(config_file_path, os.R_OK):
-            raise PermissionError(f"配置文件({config_file_path})无法访问, 对该文件没有读取权限")
+            raise PermissionError(
+                f"配置文件({config_file_path})无法访问, 对该文件没有读取权限"
+            )
 
         return True
 

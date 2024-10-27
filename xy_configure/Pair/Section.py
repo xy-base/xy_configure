@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-__author__ = "yuyangit"
+__author__ = "余洋"
 
 
 from .PairDelegate import PairDelegate

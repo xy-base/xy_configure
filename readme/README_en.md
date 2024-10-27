@@ -17,113 +17,36 @@ Generic configuration module.
 ## 安装
 
 ```bash
+# bash
 pip install xy_configure
 ```
 
 ## How to use
 
-###### python script
-
-
 ```python
-# main.py
-import asyncio
-from xy_stdio_request_base.Base import Base
-from xy_string.utils import is_empty_string
-from datetime import datetime
+# Python Interpreter.
+from xy_configure.Configure import Configure
+from xy_configure.Pair.Section import Section
+configure = Configure() 
+configure['key_1'] = "value_1"
+configure["key_2"] = "value_2"
+print(configure)
+# {"key_1":"value_1", "key_2":"value_2"}
 
+configure = Configure() 
+section = Section()
+section.set_value("key_1","value_1")
+configure.set_section(section)
+print(configure)
+# {'SECTION': {'key_1': 'value_1'}}
+section.set_name("section_1")
+configure.set_section(section)
+print(configure)
+# {'SECTION': {'key_1': 'value_1'}, 'section_1': {'key_1': 'value_1'}}
+configure.del_section("SECTION")
+print(configure)
+# {'section_1': {'key_1': 'value_1'}}
 
-def printf(text):
-    print(
-        text,
-        file=open(
-            "./logs/server.log",
-            "a+",
-        ),
-    )
-
-
-class ServerBase(Base):
-    input_text = None
-    output_text = None
-    error_text = None
-
-    def on_output(self, output_text: str):
-        self.output_text = output_text
-        self.print_text(
-            "output",
-            self.output_text,
-        )
-        return super().on_output(self.output_text)
-
-    def on_input(self, input_text: str):
-        self.input_text = input_text
-        self.print_text(
-            "input",
-            self.input_text,
-        )
-        return super().on_input(self.input_text)
-
-    def on_error(self, error_text: str):
-        self.error_text = error_text
-        self.print_text(
-            "error",
-            self.error_text,
-        )
-        return super().on_error(self.error_text)
-
-    def print_text(self, title: str, text: str):
-        if not is_empty_string(text):
-            printf(
-                f"server post {datetime.now().isoformat()} {title} => {text} {self.identifier}",
-            )
-
-
-async def main():
-    server = ServerBase()
-    server.start()
-
-    while not server.closed:
-        server.write_input(
-            f"server input => {datetime.now().isoformat()} {server.identifier}"
-        )
-        server.write_output(
-            f"server output => {datetime.now().isoformat()} {server.identifier}"
-        )
-        server.write_error(
-            f"server error => {datetime.now().isoformat()} {server.identifier}"
-        )
-        print_sep = server.input_text or server.output_text or server.error_text
-        if not is_empty_string(server.input_text):
-            printf(
-                f"{datetime.now().isoformat()} input_text => {server.input_text}",
-            )
-            server.input_text = None
-        if not is_empty_string(server.output_text):
-            printf(
-                f"{datetime.now().isoformat()} output_text => {server.output_text}",
-            )
-            server.output_text = None
-        if not is_empty_string(server.error_text):
-            printf(
-                f"{datetime.now().isoformat()} error_text => {server.error_text}",
-            )
-            server.error_text = None
-        if print_sep:
-            printf(
-                "=========================================================================",
-            )
-        await asyncio.sleep(3)
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
-
-
-```
-
-```bash
-> python main.py
 ```
 
 ## License

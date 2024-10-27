@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-__author__ = "yuyangit"
+__author__ = "余洋"
 
 from pathlib import Path
 from xy_configure.Pair.Section import Section

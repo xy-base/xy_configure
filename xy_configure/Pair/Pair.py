@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-__author__ = "yuyangit"
+__author__ = "余洋"
 
 from types import NoneType
 from xy_configure.Pair.PairDelegate import PairDelegate

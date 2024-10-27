@@ -1,11 +1,3 @@
-<!--
- * @Author: yuyangit yuyangit.0515@qq.com
- * @Date: 2024-10-19 10:54:58
- * @LastEditors: yuyangit yuyangit.0515@qq.com
- * @LastEditTime: 2024-10-19 11:08:12
- * @FilePath: /xy_configure/readme/README_zh_TW.md
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
 # xy_configure
 
 - [简体中文](README_zh_CN.md)
@@ -24,14 +16,14 @@
 ## 安裝
 
 ```bash
+# bash
 pip install xy_configure
 ```
 
 ## 使用
 
-###### python腳本
-
 ```python
+# Python Interpreter.
 from xy_configure.Configure import Configure
 from xy_configure.Pair.Section import Section
 configure = Configure() 
@@ -62,7 +54,6 @@ xy_configure 根據 <木蘭寬鬆許可證, 第2版> 獲得許可。有關詳細
 ## 捐贈
 
 如果小夥伴們覺得這些工具還不錯的話，能否請咱喝一杯咖啡呢?  
-
 ![Pay-Total](./Pay-Total.png)
 
 ## 聯繫方式
