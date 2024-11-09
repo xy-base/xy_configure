@@ -6,7 +6,7 @@ import tomllib
 from enum import IntEnum
 import json
 
-from xy_file.File import File
+from xy_file.Object.File import File
 from xy_configure.configparser.ConfigParser import ConfigParser
 
 
