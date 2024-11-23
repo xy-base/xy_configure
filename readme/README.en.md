@@ -56,7 +56,7 @@ xy_configure is licensed under the <Mulan Permissive Software License，Version 
 
 If you think these tools are pretty good, Can you please have a cup of coffee?  
 
-![Pay-Total](./Pay-Total.png)  
+![pay-total](./pay-total.png)  
 
 
 ## Contact
